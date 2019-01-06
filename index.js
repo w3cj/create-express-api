@@ -3,9 +3,9 @@
 const { spawn } = require('child_process');
 
 const name = process.argv[2];
-
-if (!name || !name.match(/^([a-zA-Z_-])+$/)) {
+if (!name || name.match(/[<>:"\/\\|?*\x00-\x1F]/)) {
   return console.log(`
+  Invalid directory name.
   Usage: create-express-api name-of-api  
 `);
 }
