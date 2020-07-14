@@ -36,7 +36,7 @@ runCommand("git", ["clone", repoURL, name])
     console.log("");
     console.log("To get started:");
     console.log("cd", name);
-    console.log("npm run dev");
+    console.log(yarnFlag ? "yarn dev" : "npm run dev");
   });
 
 function runCommand(command, args, options = undefined) {
