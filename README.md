@@ -20,3 +20,14 @@ npx create-express-api name-of-app
 ```
 
 This will create a directory with the given name, clone the [express API starter](https://github.com/w3cj/express-api-starter) repo into it, and install dependencies.
+
+## Usage with Typescript
+
+You can also use a [Typescript express API starter](https://github.com/maiconfriedel/express-api-starter-typescript), by using the argument `--typescript` or `--ts`
+
+```sh
+# with global install
+create-express-api name-of-app --typescript
+# with npx
+npx create-express-api name-of-app --typescript
+```
