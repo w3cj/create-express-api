@@ -14,7 +14,7 @@ const repoURL = 'https://github.com/w3cj/express-api-starter.git';
 
 runCommand('git', ['clone', repoURL, name])
   .then(() => {
-    return runCommand('rm', ['-rf', `${name}/.git`]);
+    return runCommand('rm', ['-r', `${name}/.git`]);
   }).then(() => {
     console.log('Installing dependencies...');
     return runCommand('npm', ['install'], {
