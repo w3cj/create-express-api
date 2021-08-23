@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-const { spawn } = require('child_process');
+const spawn = require('child_process').spawn;
 
 const name = process.argv[2];
 if (!name || name.match(/[<>:"\/\\|?*\x00-\x1F]/)) {
@@ -29,6 +29,11 @@ runCommand('git', ['clone', repoURL, name])
   });
 
 function runCommand(command, args, options = undefined) {
+  var windowsEnvironment = process.platform === "win32";
+  if (command === 'npm' && windowsEnvironment) {
+    var command = 'npm.cmd'
+    // var command = process.execPath
+  } 
   const spawned = spawn(command, args, options);
 
   return new Promise((resolve) => {
