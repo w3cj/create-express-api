@@ -1,6 +1,6 @@
 {
   "name": "create-express-api",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "bin": {
     "create-express-api": "index.js"
   },
@@ -11,9 +11,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/w3cj/create-express-api.git"
+    "url": "git+https://github.com/w3cj/create-express-api.git"
   },
   "keywords": [],
   "author": "CJ R. <cj@null.computer> (https://w3cj.now.sh)",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/w3cj/create-express-api/issues"
+  },
+  "homepage": "https://github.com/w3cj/create-express-api#readme",
+  "dependencies": {
+    "args": "^5.0.3",
+    "chalk": "^5.0.1",
+    "degit": "^2.8.4",
+    "yargs-parser": "^21.1.1"
+  }
 }
