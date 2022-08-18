@@ -67,7 +67,8 @@ import('chalk').then(({ default: chalk }) => {
 
   emitter.clone(flags.d).then(() => {
     console.log(chalk.bgBlack.cyan('Installing dependencies...'));
-    return runCommand('npm', ['install'], {
+    const command = /^win/.test(process.platform) ? 'npm.cmd' : 'npm';
+    return runCommand(command, ['install'], {
       cwd: `${process.cwd()}/${flags.d}`,
     }).then(() => {
       console.log(chalk.bgBlack.cyan('Done! 🏁'));
