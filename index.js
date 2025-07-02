@@ -1,9 +1,9 @@
 #! /usr/bin/env node
 
-const fs = require('fs');
-const { spawn } = require('child_process');
-const degit = require('degit');
-const args = require('args');
+import fs from 'fs';
+import { spawn } from 'child_process';
+import degit from 'degit';
+import args from 'args';
 
 args
   .option('typescript', 'Use typescript template.', false)
@@ -67,7 +67,7 @@ import('chalk').then(({ default: chalk }) => {
 
   emitter.clone(flags.d).then(() => {
     console.log(chalk.bgBlack.cyan('Installing dependencies...'));
-    const command = /^win/.test(process.platform) ? 'npm.cmd' : 'npm';
+    const command = /^win/.test(process.platform) ? 'pnpm.cmd' : 'pnpm';
     return runCommand(command, ['install'], {
       cwd: `${process.cwd()}/${flags.d}`,
     }).then(() => {
@@ -75,7 +75,8 @@ import('chalk').then(({ default: chalk }) => {
       console.log('');
       console.log(chalk.bgBlack.white('To get started:'));
       console.log(chalk.bgBlack.cyan(`cd ${flags.d}`));
-      console.log(chalk.bgBlack.cyan('npm run dev'));
+      console.log(chalk.bgBlack.cyan('pnpm run dev'));
+      process.exit(0);
     });
   });
 });

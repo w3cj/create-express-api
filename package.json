@@ -1,6 +1,7 @@
 {
   "name": "create-express-api",
-  "version": "2.0.1",
+  "version": "3.0.0",
+  "type": "module",
   "bin": {
     "create-express-api": "index.js"
   },
@@ -22,8 +23,8 @@
   "homepage": "https://github.com/w3cj/create-express-api#readme",
   "dependencies": {
     "args": "^5.0.3",
-    "chalk": "^5.0.1",
+    "chalk": "^5.4.1",
     "degit": "^2.8.4",
-    "yargs-parser": "^21.1.1"
+    "yargs-parser": "^22.0.0"
   }
 }
